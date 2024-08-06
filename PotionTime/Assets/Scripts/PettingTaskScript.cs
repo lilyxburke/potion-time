@@ -2,17 +2,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using System;
-
+using Random = UnityEngine.Random;
 
 public class PettingTaskScript : MonoBehaviour
 {
-    private bool submitted = false;
+    private static bool submitted = false;
     private int[] correctClicks;
     private int[] chosenClicks = new int[] {0, 0, 0, 0, 0, 0};
+    public Sprite[] faces;
+    public Sprite[] bodies;
+    public SpriteRenderer faceSprite;
+    public SpriteRenderer bodySprite;
 
     void Start()
     {
-        correctClicks = new int[] {1, 0, 0, 0, 0, 0};
+        ChooseProperties();
+        CreateSolution();
     }
 
     public void CheckAnswer()
@@ -20,10 +25,13 @@ public class PettingTaskScript : MonoBehaviour
         if (correctClicks.SequenceEqual(chosenClicks))
         {
             submitted = true;
+            GameplayScript.CompletedTask(1);
+
         }
         else
         {
             Timer.timeLeft -= 30;
+            ResetClicks();
         }
     }
 
@@ -57,6 +65,50 @@ public class PettingTaskScript : MonoBehaviour
                 chosenClicks[5]++;
                 break;
         }
+    }
+
+    public void CreateSolution()
+    {
+        string faceName = faceSprite.sprite.name;
+        string bodyName = bodySprite.sprite.name;
+
+        if(faceName == "happy")
+        {
+            if (bodyName == "blackcat")
+            {
+                correctClicks = new int[] { 1, 0, 0, 0, 0, 0 };
+            }
+            else if(bodyName == "browncat")
+            {
+                correctClicks = new int[] { 0, 1, 0, 0, 0, 0 };
+            }
+            else
+            {
+                correctClicks = new int[] { 0, 0, 1, 0, 0, 0 };
+            }
+        }
+        else
+        {
+            if (bodyName == "blackcat")
+            {
+                correctClicks = new int[] { 0, 0, 0, 1, 0, 0 };
+            }
+            else if (bodyName == "browncat")
+            {
+                correctClicks = new int[] { 0, 0, 0, 0, 1, 0 };
+            }
+            else
+            {
+                correctClicks = new int[] { 0, 0, 0, 0, 0, 1 };
+            }
+        }
+    }
+
+    public void ChooseProperties()
+    {
+        faceSprite.sprite = faces[Random.Range(0, 2)];
+        bodySprite.sprite = bodies[Random.Range(0, 3)];
+
     }
 
     

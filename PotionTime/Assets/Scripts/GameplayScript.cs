@@ -1,13 +1,17 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameplayScript : MonoBehaviour
 {
     public GameObject taskDisplay;
+    public GameObject completed;
     public Transform transformVariable;
     public List<GameObject> availableTasks;
     public static List<GameObject> runningTasks = new List<GameObject>();
+    public static List<GameObject> finishedTasks = new List<GameObject>();
+    public static List<GameObject> completedTasks = new List<GameObject>();
     public static bool started = false;
 
     void Start()
@@ -59,10 +63,32 @@ public class GameplayScript : MonoBehaviour
             Instantiate(taskDisplay, transformVariable.position, transform.rotation);
 
             transformVariable.position = new Vector3(x, y, 1);
-            Debug.Log(transformVariable.position);
             Instantiate(runningTasks[i + 3], transformVariable.position, transform.rotation);
 
             x += 5f;
         }
+    }
+
+    public static void CompletedTask(int taskNumber)
+    {
+        SceneManager.LoadScene("TaskScene");
+        int index = runningTasks.FindIndex(GameObject => GameObject.name == "Task" + taskNumber);
+        completedTasks.Add(runningTasks[index]);
+    }
+
+    public void UpdateCompletedTasks()
+    {
+        foreach (GameObject i in completedTasks)
+        {
+            GameObject obj = GameObject.Find(i.name + "(Clone)");
+            obj.GetComponent<BoxCollider2D>().enabled = false;
+            Transform transform = obj.transform;
+            Vector3 newLocation = new Vector3(transform.position.x, transform.position.y, 0);
+            Instantiate(completed, newLocation, transform.rotation);
+        }
+    }
+    void Update()
+    {
+        UpdateCompletedTasks();
     }
 }

@@ -17,9 +17,6 @@ public class ChooseDifficulty : MonoBehaviour
     {
         difficulty = "easy";
         time = 660;
-        tasks = 5;
-        //tasks = Random.Range(4, 6);
-        Debug.Log("tasks are: " + tasks);
-        Debug.Log("diffuclty is " + difficulty);
+        tasks = Random.Range(4, 6);
     }
 }

@@ -6,10 +6,15 @@ public class Timer : MonoBehaviour
     public TMP_Text timerText;
     public static float timeLeft;
     public bool timerOn = false;
+    public static bool beginningTimer = true;
     void Start()
     {
         timerOn = true;
-        timeLeft = ChooseDifficulty.time;
+        if (beginningTimer)
+        {
+            timeLeft = ChooseDifficulty.time;
+            beginningTimer = false;
+        }
     }
     void Update()
     {
