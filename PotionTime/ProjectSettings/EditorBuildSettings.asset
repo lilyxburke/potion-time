@@ -17,4 +17,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TaskScene.unity
     guid: 196ecc66fbf9842418097b93b5d523bc
+  - enabled: 1
+    path: Assets/Scenes/Task1Scene.unity
+    guid: 13d8230bf659b7645b3c2353bb44f3c9
+  - enabled: 1
+    path: Assets/Scenes/Task2Scene.unity
+    guid: 1d8ca4f9553bfb94f908d24e3c777e3e
+  - enabled: 1
+    path: Assets/Scenes/Task3Scene.unity
+    guid: cd33f38ca302e7441867eb39ad707569
+  - enabled: 1
+    path: Assets/Scenes/Task4Scene.unity
+    guid: 93f54ab12877dbb41b066721b4ff25e4
+  - enabled: 1
+    path: Assets/Scenes/Task5Scene.unity
+    guid: 64519108eff884b45be0a3be2d69f9ee
   m_configObjects: {}
