@@ -3,16 +3,14 @@ using UnityEngine.UI;
 using System.Linq;
 using System;
 using Random = UnityEngine.Random;
+using System.Collections.Generic;
 
 public class PettingTaskScript : MonoBehaviour
 {
-    private static bool submitted = false;
-    private int[] correctClicks;
-    private int[] chosenClicks = new int[] {0, 0, 0, 0, 0, 0};
-    public Sprite[] faces;
-    public Sprite[] bodies;
-    public SpriteRenderer faceSprite;
-    public SpriteRenderer bodySprite;
+    private List<int> correctClicks = new List<int>();
+    private List<int> chosenClicks = new List<int>();
+    public Sprite[] options;
+    public SpriteRenderer chosenSprite;
 
     void Start()
     {
@@ -24,20 +22,19 @@ public class PettingTaskScript : MonoBehaviour
     {
         if (correctClicks.SequenceEqual(chosenClicks))
         {
-            submitted = true;
             GameplayScript.CompletedTask(1);
 
         }
         else
         {
-            Timer.timeLeft -= 30;
+            Timer.timeLeft -= 10;
             ResetClicks();
         }
     }
 
     public void ResetClicks()
     {
-        chosenClicks = new int[] { 0, 0, 0, 0, 0, 0 };
+        chosenClicks = new List<int>();
     }
 
     public void AddClicks(Button clickedButton)
@@ -47,67 +44,58 @@ public class PettingTaskScript : MonoBehaviour
         switch (buttonName)
         {
             case "LeftEar":
-                chosenClicks[0]++;
+                chosenClicks.Add(1);
                 break;
             case "RightEar":
-                chosenClicks[1]++; 
+                chosenClicks.Add(2);
                 break;
             case "Stomach":
-                chosenClicks[2]++;
+                chosenClicks.Add(3);
                 break;
             case "Back":
-                chosenClicks[3]++;
+                chosenClicks.Add(4);
                 break;
             case "LeftPaw":
-                chosenClicks[4]++;
+                chosenClicks.Add(5);
                 break;
             case "RightPaw":
-                chosenClicks[5]++;
+                chosenClicks.Add(6);
                 break;
         }
+
+        CheckAnswer();
     }
 
     public void CreateSolution()
     {
-        string faceName = faceSprite.sprite.name;
-        string bodyName = bodySprite.sprite.name;
+        string optionName = chosenSprite.sprite.name;
 
-        if(faceName == "happy")
+        switch (optionName)
         {
-            if (bodyName == "blackcat")
-            {
-                correctClicks = new int[] { 1, 0, 0, 0, 0, 0 };
-            }
-            else if(bodyName == "browncat")
-            {
-                correctClicks = new int[] { 0, 1, 0, 0, 0, 0 };
-            }
-            else
-            {
-                correctClicks = new int[] { 0, 0, 1, 0, 0, 0 };
-            }
-        }
-        else
-        {
-            if (bodyName == "blackcat")
-            {
-                correctClicks = new int[] { 0, 0, 0, 1, 0, 0 };
-            }
-            else if (bodyName == "browncat")
-            {
-                correctClicks = new int[] { 0, 0, 0, 0, 1, 0 };
-            }
-            else
-            {
-                correctClicks = new int[] { 0, 0, 0, 0, 0, 1 };
-            }
+            case "happy-black":
+                correctClicks = new List<int>() { 1 };
+                break;
+            case "happy-brown":
+                correctClicks = new List<int>() { 2 };
+                break;
+            case "happy-white":
+                correctClicks = new List<int>() { 3 };
+                break;
+            case "sad-black":
+                correctClicks = new List<int>() { 4 };
+                break;
+            case "sad-brown":
+                correctClicks = new List<int>() { 5 };
+                break;
+            case "sad-white":
+                correctClicks = new List<int>() { 6 };
+                break;
         }
     }
 
     public void ChooseProperties()
     {
-        faceSprite.sprite = faces[Random.Range(0, 2)];
-        bodySprite.sprite = bodies[Random.Range(0, 3)];
+        chosenSprite.sprite = options[Random.Range(0,7)];
 
     }
 
