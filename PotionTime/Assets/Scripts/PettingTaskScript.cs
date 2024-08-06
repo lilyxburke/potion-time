@@ -21,6 +21,10 @@ public class PettingTaskScript : MonoBehaviour
         {
             submitted = true;
         }
+        else
+        {
+            Timer.timeLeft -= 30;
+        }
     }
 
     public void ResetClicks()

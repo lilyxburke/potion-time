@@ -4,7 +4,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public TMP_Text timerText;
-    public float timeLeft;
+    public static float timeLeft;
     public bool timerOn = false;
     void Start()
     {
