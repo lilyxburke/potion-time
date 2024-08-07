@@ -13,6 +13,7 @@ public class GameplayScript : MonoBehaviour
     public static List<GameObject> finishedTasks = new List<GameObject>();
     public static List<GameObject> completedTasks = new List<GameObject>();
     public static bool started = false;
+    public static List<GameObject> dontDestroy = new List<GameObject>();
 
     void Start()
     {
