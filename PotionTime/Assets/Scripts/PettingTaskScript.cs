@@ -95,7 +95,7 @@ public class PettingTaskScript : MonoBehaviour
 
     public void ChooseProperties()
     {
-        chosenSprite.sprite = options[Random.Range(0,7)];
+        chosenSprite.sprite = options[Random.Range(0,6)];
 
     }
 
