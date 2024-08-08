@@ -16,6 +16,7 @@ public class DestroyManager : MonoBehaviour
             GameplayScript.dontDestroy.Add(storageManager);
             DontDestroyOnLoad(inventory);
             GameplayScript.dontDestroy.Add(inventory);
+
         }
         else
         {

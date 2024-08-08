@@ -9,6 +9,7 @@ TagManager:
   - Ingredient
   - Numbers
   - Canvas
+  - Door
   layers:
   - Default
   - TransparentFX

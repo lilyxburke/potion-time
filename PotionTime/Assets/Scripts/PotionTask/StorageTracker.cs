@@ -16,7 +16,7 @@ public class StorageTracker : MonoBehaviour
         children = GetChildren();
     }
 
-    public void OnEnable()
+    void OnEnable()
     {
         exit = GameObject.Find("ExitButton");
         inventory = GameObject.Find("ChestInventory");
@@ -52,10 +52,11 @@ public class StorageTracker : MonoBehaviour
             {
                 if (Random.Range(0, 3) == 1)
                 {
-                    int j = Random.Range(0, script.itemChoices.Length);
+                    int j = Random.Range(0, script.itemChoices.Length-1);
                     GameObject item = Instantiate(script.itemChoices[j], this.gameObject.transform);
                     maximum--;
                     item.SetActive(false);
+                    storageManager.GetComponent<StorageManagerScript>().totalIngredients++;
                 }
                 else
                 {

@@ -11,7 +11,7 @@ public class StorageManagerScript : MonoBehaviour
     public static bool alreadyStarted = false;
     public GameObject[] itemChoices;
     public GameObject chosen;
-
+    public int totalIngredients = 0;
     public void CreateStorage()
     {
         foreach(GameObject barrel in barrelSpawner)
