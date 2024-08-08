@@ -163,7 +163,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 87479640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b498949d2292f247a6a5f8986e577e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 223c8f359775a7e418246960904da84d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputField: {fileID: 2111962251}
@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2111962248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaec95198ba3f534198a8be5dbc9ee03, type: 3}
+  m_Script: {fileID: 11500000, guid: 528ba98261185104dac5990a0fb15592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   runeScript: {fileID: 87479642}

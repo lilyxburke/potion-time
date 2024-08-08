@@ -106,6 +106,7 @@ public class StorageTracker : MonoBehaviour
 
         inventory.SetActive(true);
         exit.SetActive(true);
+        GameObject.Find("Canvas").SetActive(false);
     }
 
 }
