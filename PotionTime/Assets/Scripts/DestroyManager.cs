@@ -4,8 +4,8 @@ using UnityEngine;
 public class DestroyManager : MonoBehaviour
 {
     public static bool alreadyStarted = false;
-    public static List<GameObject> chosenBarrels = new List<GameObject>();
     public GameObject storageManager;
+    public GameObject inventory;
 
     void Start()
     {
@@ -15,19 +15,28 @@ public class DestroyManager : MonoBehaviour
             alreadyStarted = true;
             DontDestroyOnLoad(storageManager);
             GameplayScript.dontDestroy.Add(storageManager);
+            DontDestroyOnLoad(inventory);
+            GameplayScript.dontDestroy.Add(inventory);
         }
         else
         {
             Destroy(storageManager);
-            GameObject found = null;
-            foreach (GameObject obj in GameplayScript.dontDestroy)
-            {
-                if (obj.CompareTag("StorageManager"))
-                {
-                    found = obj;
-                }
-            }
-            found.SetActive(true);
+            Destroy(inventory);
+            ActivateDestroyObject("StorageManager");
+            ActivateDestroyObject("Inventory");
         }
+    }
+
+    void ActivateDestroyObject(string tagName)
+    {
+        GameObject found = null;
+        foreach (GameObject obj in GameplayScript.dontDestroy)
+        {
+            if (obj.CompareTag(tagName))
+            {
+                found = obj;
+            }
+        }
+        found.SetActive(true);
     }
 }
