@@ -271,10 +271,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 902017572}
+  exit: {fileID: 2144864457}
   chest: {fileID: 21300000, guid: 01823c3a6e12f504b8240fa18145c606, type: 3}
   book: {fileID: 21300000, guid: 01823c3a6e12f504b8240fa18145c606, type: 3}
   storageManager: {fileID: 1784921882}
-  exit: {fileID: 2144864457}
   children: []
 --- !u!114 &119468106
 MonoBehaviour:
@@ -444,11 +444,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
+  exit: {fileID: 0}
   chest: {fileID: 0}
   book: {fileID: 0}
   storageManager: {fileID: 0}
-  exit: {fileID: 0}
   children: []
+--- !u!1 &405199233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 405199234}
+  m_Layer: 5
+  m_Name: Number
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &405199234
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405199233}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 418601569}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &418601565
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +496,7 @@ GameObject:
   - component: {fileID: 418601568}
   - component: {fileID: 418601567}
   - component: {fileID: 418601566}
+  - component: {fileID: 418601570}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -545,6 +581,7 @@ RectTransform:
   m_Children:
   - {fileID: 1918751515}
   - {fileID: 556776122}
+  - {fileID: 405199234}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -552,6 +589,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &418601570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418601565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e21bb6040d78c104aa28cf34728b037d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &479812263
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,56 +925,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 902017572}
+  exit: {fileID: 2144864457}
   chest: {fileID: 21300000, guid: 01823c3a6e12f504b8240fa18145c606, type: 3}
   book: {fileID: 21300000, guid: 01823c3a6e12f504b8240fa18145c606, type: 3}
   storageManager: {fileID: 1784921882}
-  exit: {fileID: 2144864457}
   children: []
---- !u!1 &832156321
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 832156323}
-  - component: {fileID: 832156322}
-  m_Layer: 0
-  m_Name: IngredientManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &832156322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832156321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2ce5ef1cd186894d917024ec4c29251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ingredients: []
---- !u!4 &832156323
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832156321}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3147522, y: 2.1256042, z: 10.543408}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &902017572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,10 +1263,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 902017572}
+  exit: {fileID: 2144864457}
   chest: {fileID: 21300000, guid: 01823c3a6e12f504b8240fa18145c606, type: 3}
   book: {fileID: 21300000, guid: 01823c3a6e12f504b8240fa18145c606, type: 3}
   storageManager: {fileID: 1784921882}
-  exit: {fileID: 2144864457}
   children: []
 --- !u!1 &1289611943
 GameObject:
@@ -1610,10 +1614,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 902017572}
+  exit: {fileID: 2144864457}
   chest: {fileID: 21300000, guid: 01823c3a6e12f504b8240fa18145c606, type: 3}
   book: {fileID: 21300000, guid: 01823c3a6e12f504b8240fa18145c606, type: 3}
   storageManager: {fileID: 1784921882}
-  exit: {fileID: 2144864457}
   children: []
 --- !u!1 &1535101063
 GameObject:
@@ -1759,10 +1763,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 902017572}
+  exit: {fileID: 2144864457}
   chest: {fileID: 21300000, guid: 01823c3a6e12f504b8240fa18145c606, type: 3}
   book: {fileID: 21300000, guid: 01823c3a6e12f504b8240fa18145c606, type: 3}
   storageManager: {fileID: 1784921882}
-  exit: {fileID: 2144864457}
   children: []
 --- !u!1 &1607083100
 GameObject:
@@ -1908,10 +1912,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
+  exit: {fileID: 0}
   chest: {fileID: 0}
   book: {fileID: 0}
   storageManager: {fileID: 0}
-  exit: {fileID: 0}
   children: []
 --- !u!1 &1619224006
 GameObject:
@@ -2057,10 +2061,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
+  exit: {fileID: 0}
   chest: {fileID: 0}
   book: {fileID: 0}
   storageManager: {fileID: 0}
-  exit: {fileID: 0}
   children: []
 --- !u!1 &1624053653
 GameObject:
@@ -2246,7 +2250,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1784921882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4ea474bc91d82e42835d5b48719982e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e685aba4fda0504f814e060ba1e94ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   barrelOptions:
@@ -2302,9 +2306,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1875140446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 428797bb7ccebab41b6c8fa13cb6ce6f, type: 3}
+  m_Script: {fileID: 11500000, guid: 460851085dc389a4eb48e7b86fc4e50e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientNumbers: 0000000000000000000000000000000000000000
+  numbers: []
+  ingredientOrder: []
+  children: []
+  numbersObject: {fileID: 1971744856854732236, guid: dd18a704d407feb49bd6f7813045767b, type: 3}
 --- !u!212 &1875140448
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2714,10 +2723,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 902017572}
+  exit: {fileID: 2144864457}
   chest: {fileID: 21300000, guid: 01823c3a6e12f504b8240fa18145c606, type: 3}
   book: {fileID: 21300000, guid: 01823c3a6e12f504b8240fa18145c606, type: 3}
   storageManager: {fileID: 1784921882}
-  exit: {fileID: 2144864457}
   children: []
 --- !u!1 &2144864457
 GameObject:
@@ -2871,7 +2880,6 @@ SceneRoots:
   - {fileID: 1103360123}
   - {fileID: 418601569}
   - {fileID: 1292957905}
-  - {fileID: 832156323}
   - {fileID: 1784921884}
   - {fileID: 479812265}
   - {fileID: 1875140449}
