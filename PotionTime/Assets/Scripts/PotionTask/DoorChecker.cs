@@ -19,7 +19,6 @@ public class DoorChecker : MonoBehaviour
     {
         if (opened)
         {
-            Debug.Log("opened");
             SceneManager.LoadScene("Task3Scene2");
         }
         if (SceneManager.GetActiveScene().name != "Task3Scene")

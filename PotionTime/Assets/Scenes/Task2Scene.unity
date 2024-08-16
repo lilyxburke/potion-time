@@ -168,10 +168,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 2111962251}
   availableRunes:
-  - {fileID: 3198741368995909978, guid: ba555d6a324cda24cbee63cd63505bf8, type: 3}
-  - {fileID: 7840522850943754083, guid: a391fd5209ea7e643b9af9345fff5c95, type: 3}
-  - {fileID: 1718273638495184078, guid: 9e4d0a601bbb9ce4e84194a1299f46c1, type: 3}
-  - {fileID: 2482725900666785077, guid: 0d109818144e360429102be344d90467, type: 3}
+  - {fileID: 2123196718406485632, guid: 6e912f225307b1945a55cb0d60241ca0, type: 3}
+  - {fileID: 9103142057980687857, guid: 58b3f3b26d7b22d47bce32ebd3722104, type: 3}
+  - {fileID: 9126882023832699333, guid: 0157f58b182bf4045aff17b1c72d3c29, type: 3}
+  - {fileID: 4726560485363131976, guid: 645323b256be0f14f83d1826070ff33d, type: 3}
+  - {fileID: 7904931944083135989, guid: e0c4f0671c713724fbdb02f930bbe355, type: 3}
+  availableSymbols:
+  - {fileID: 8288347085324570647, guid: a8aec753471ed35459d24305bd16533e, type: 3}
+  - {fileID: 3476289273188023800, guid: 1904c93af1067aa4eb772e7aba64564c, type: 3}
+  - {fileID: 1458668084659114017, guid: a17058f9909799147b4e58b1a1362ebf, type: 3}
+  - {fileID: 6956490706537821934, guid: ccb978107bd7eba4cb9a6d1367454c0b, type: 3}
+  - {fileID: 1156995323159230913, guid: 5b2bcbffb6384c94cbcf85cdb35bc513, type: 3}
+  - {fileID: 794671603815740739, guid: 281c21f1409992c44a2c86835eafedd5, type: 3}
+  - {fileID: 4418641515579786451, guid: 952645dd526efa64a9ac20857c4c5a77, type: 3}
+  - {fileID: 8590656921933100231, guid: b2fecac4aa0d63f4c8c5be6dce86a5a3, type: 3}
+  - {fileID: 2920108409490569967, guid: 5cf0b5576b5a963498f5167453cd14a0, type: 3}
+  - {fileID: 782590843572194561, guid: 420548223497c1c46872d9f1ef38108b, type: 3}
   transformVariable: {fileID: 87479641}
 --- !u!1 &182754959
 GameObject:

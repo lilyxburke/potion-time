@@ -4,7 +4,6 @@ public class ExitChest : MonoBehaviour
 {
     public GameObject inventory;
     public GameObject storageManager;
-    public GameObject canvas;
     void Start()
     {
         this.gameObject.SetActive(false);
@@ -24,7 +23,6 @@ public class ExitChest : MonoBehaviour
         {
             child.SetActive(false);
         }
-        canvas.SetActive(true);
     }
 
 }

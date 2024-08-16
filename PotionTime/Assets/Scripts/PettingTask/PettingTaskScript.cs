@@ -20,9 +20,17 @@ public class PettingTaskScript : MonoBehaviour
 
     public void CheckAnswer()
     {
-        if (correctClicks.SequenceEqual(chosenClicks))
+        List<int> checkClicks = new List<int>();
+        for (int i = 0; i < chosenClicks.Count; i++) {
+            checkClicks.Add(correctClicks[i]);
+        }
+
+        if (checkClicks.SequenceEqual(chosenClicks) )
         {
-            GameplayScript.CompletedTask(1);
+            if (chosenClicks.Count == correctClicks.Count)
+            {
+                GameplayScript.CompletedTask(1);
+            }
 
         }
         else
@@ -73,22 +81,22 @@ public class PettingTaskScript : MonoBehaviour
         switch (optionName)
         {
             case "happy-black":
-                correctClicks = new List<int>() { 1 };
+                correctClicks = new List<int>() { 4, 4, 3, 4, 4, 6 };
                 break;
             case "happy-brown":
-                correctClicks = new List<int>() { 2 };
+                correctClicks = new List<int>() { 3, 3, 3, 5, 2, 4, 4, 3 };
                 break;
             case "happy-white":
-                correctClicks = new List<int>() { 3 };
+                correctClicks = new List<int>() { 4, 4, 3, 2, 1, 2, 1 };
                 break;
             case "sad-black":
-                correctClicks = new List<int>() { 4 };
+                correctClicks = new List<int>() { 6, 5, 1, 4, 4, 4, 4, 6 };
                 break;
             case "sad-brown":
-                correctClicks = new List<int>() { 5 };
+                correctClicks = new List<int>() { 3, 3, 3, 5, 2, 6, 5, 1, 4 };
                 break;
             case "sad-white":
-                correctClicks = new List<int>() { 6 };
+                correctClicks = new List<int>() { 2, 1, 2, 1, 6, 5, 1, 4 };
                 break;
         }
     }
