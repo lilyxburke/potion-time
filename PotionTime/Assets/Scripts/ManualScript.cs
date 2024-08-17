@@ -32,8 +32,8 @@ public class ManualScript : MonoBehaviour
 
     private void MoveOut()
     {
-        manual.transform.localPosition = new Vector3(620, -540, 20);
-        manualOverlay.GetComponent<RectTransform>().anchoredPosition = new Vector3(1600, 0, 0);
+        manual.transform.localPosition = new Vector3(620, -540, 0);
+        manualOverlay.GetComponent<RectTransform>().anchoredPosition = new Vector3(4000, 0, 0);
         button.transform.localPosition = new Vector3(830, 0, 2);
         button.GetComponent<Image>().sprite = left;
     }

@@ -13,6 +13,8 @@ public class RuneDecipheringScript : MonoBehaviour
     public static GameObject[,] createdRunes;
     public Transform transformVariable;
     public static bool alreadyOpened = false;
+    public GameObject runeTracker;
+    private int runes;
 
     void Start()
     {
@@ -28,7 +30,6 @@ public class RuneDecipheringScript : MonoBehaviour
     }
     private void SpawnRunes()
     {
-        int runes = 0;
         if(ChooseDifficulty.difficulty == "easy")
         {
             runes = Random.Range(4, 6);
@@ -71,11 +72,16 @@ public class RuneDecipheringScript : MonoBehaviour
         for (int i = 0; i < runes; i++)
         {
             transformVariable.position = new Vector3(x, y, 2);
-            Instantiate(createdRunes[i,0], transformVariable.position, transform.rotation);
+            GameObject shape = Instantiate(createdRunes[i,0], transformVariable.position, transform.rotation);
+            shape.transform.SetParent(runeTracker.transform);
             transformVariable.position = new Vector3(x, y, 1);
-            Instantiate(createdRunes[i,1], transformVariable.position, transform.rotation);
+            GameObject symbol = Instantiate(createdRunes[i,1], transformVariable.position, transform.rotation);
+            symbol.transform.SetParent(runeTracker.transform);
             x += 2.5f;
         }
+
+        int multiply = runes - 3;
+            runeTracker.transform.position = new Vector2(multiply * -1.27f, transform.position.y);
     }
     private void ReloadRunes()
     {
@@ -89,6 +95,8 @@ public class RuneDecipheringScript : MonoBehaviour
             Instantiate(createdRunes[i, 1], transformVariable.position, transform.rotation);
             x += 2.5f;
         }
+        int multiply = runes - 3;
+        runeTracker.transform.position = new Vector2(multiply * -1.27f, transform.position.y);
     }
     public void CheckAnswer(string answer)
     {
