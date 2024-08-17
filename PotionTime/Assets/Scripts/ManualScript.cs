@@ -24,7 +24,7 @@ public class ManualScript : MonoBehaviour
     }
     private void MoveIn()
     {
-        manual.transform.localPosition = new Vector3(-960, -540, 0);
+        manual.transform.localPosition = new Vector3(-990, -540, 0);
         manualOverlay.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
         button.transform.localPosition = new Vector3(670, 0, 2);
         button.GetComponent<Image>().sprite = right;

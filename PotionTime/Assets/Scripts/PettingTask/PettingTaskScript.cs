@@ -7,15 +7,28 @@ using System.Collections.Generic;
 
 public class PettingTaskScript : MonoBehaviour
 {
-    private List<int> correctClicks = new List<int>();
+    private static List<int> correctClicks = new List<int>();
     private List<int> chosenClicks = new List<int>();
     public Sprite[] options;
     public SpriteRenderer chosenSprite;
+    private static string spriteName;
+    public static bool started = false;
 
     void Start()
     {
-        ChooseProperties();
-        CreateSolution();
+        if (!started)
+        {
+            chosenSprite.sprite = options[Random.Range(0, 6)];
+            CreateSolution();
+            LoadIn();
+            started = true;
+        }
+        else
+        {
+            chosenSprite.sprite = options[Array.FindIndex(options,Sprite => Sprite.name == spriteName)];
+            ResetClicks();
+            LoadIn();
+        }
     }
 
     public void CheckAnswer()
@@ -76,9 +89,9 @@ public class PettingTaskScript : MonoBehaviour
 
     public void CreateSolution()
     {
-        string optionName = chosenSprite.sprite.name;
+        spriteName = chosenSprite.sprite.name;
 
-        switch (optionName)
+        switch (spriteName)
         {
             case "happy-black":
                 correctClicks = new List<int>() { 4, 4, 3, 4, 4, 6 };
@@ -101,10 +114,10 @@ public class PettingTaskScript : MonoBehaviour
         }
     }
 
-    public void ChooseProperties()
+    private void LoadIn()
     {
-        chosenSprite.sprite = options[Random.Range(0,6)];
-
+        chosenSprite.transform.position = new Vector3(0, 0, 0);
+        chosenSprite.transform.localScale = new Vector2(1.8f, 1.8f);
     }
 
     

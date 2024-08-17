@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameplayScript : MonoBehaviour
 {
-    public GameObject taskDisplay;
     public GameObject completed;
     public Transform transformVariable;
     public List<GameObject> availableTasks;
@@ -46,8 +45,6 @@ public class GameplayScript : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            transformVariable.position = new Vector3(x, y, 2);
-            Instantiate(taskDisplay, transformVariable.position, transform.rotation);
             transformVariable.position = new Vector3(x, y, 1);
             Instantiate(runningTasks[i], transformVariable.position, transform.rotation);
 
@@ -59,10 +56,6 @@ public class GameplayScript : MonoBehaviour
         y = -2.75f;
         for (int i = 0; i < ChooseDifficulty.tasks - 3; i++)
         {
-
-            transformVariable.position = new Vector3(x, y, 2);
-            Instantiate(taskDisplay, transformVariable.position, transform.rotation);
-
             transformVariable.position = new Vector3(x, y, 1);
             Instantiate(runningTasks[i + 3], transformVariable.position, transform.rotation);
 
@@ -72,8 +65,8 @@ public class GameplayScript : MonoBehaviour
 
     public static void CompletedTask(int taskNumber)
     {
-        SceneManager.LoadScene("TaskScene");
-        int index = runningTasks.FindIndex(GameObject => GameObject.name == "Task" + taskNumber);
+        SceneManager.LoadScene("TaskMenu");
+        int index = runningTasks.FindIndex(GameObject => GameObject.name.Contains( "Task" + taskNumber));
         completedTasks.Add(runningTasks[index]);
     }
 

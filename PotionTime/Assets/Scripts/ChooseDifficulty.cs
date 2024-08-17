@@ -10,7 +10,7 @@ public class ChooseDifficulty : MonoBehaviour
     public static float tasks;
    public void ChooseDifficuty()
     {
-        SceneManager.LoadScene("TaskScene");
+        SceneManager.LoadScene("TaskMenu");
     }
 
     public void EasyDifficulty()

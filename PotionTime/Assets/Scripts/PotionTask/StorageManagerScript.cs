@@ -27,7 +27,7 @@ public class StorageManagerScript : MonoBehaviour
 
     void Update()
     {
-        if(SceneManager.GetActiveScene().name != "Task3Scene")
+        if(SceneManager.GetActiveScene().name != "PotionTask3")
         {
             this.gameObject.SetActive(false);
         }

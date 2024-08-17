@@ -143,6 +143,7 @@ public class RuneDecipheringScript : MonoBehaviour
             }
             
         }
+        Debug.Log(solution);
     }
 
     private int ApplyRune(string symbolName, int solution, int order)
@@ -170,7 +171,7 @@ public class RuneDecipheringScript : MonoBehaviour
                 break;
             case "symbol-e":
                 int day = DateTime.Now.Day;
-                solution -= day;
+                solution += day;
                 break;
             case "symbol-f":
                 solutionString = solution.ToString();
